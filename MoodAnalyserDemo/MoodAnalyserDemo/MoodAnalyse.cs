@@ -4,9 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyserDemo
+namespace MoodAnalyzerDemo
 {
-    internal class MoodAnalyse
+    public class MoodAnalyze
     {
+        public string AnalyzeMood(string message)
+        {
+            //My name is sad
+            if (message.Contains("Sad"))
+            {
+                return "Sad";
+            }
+            else 
+            {
+                return "Happy";
+            }
+        }
     }
 }
