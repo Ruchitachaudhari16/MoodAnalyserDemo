@@ -54,6 +54,24 @@ namespace MoodAnalyzeTest
                 Assert.AreEqual(ex.Message, "Message should not be null");
             }
         }
+        [Test]
+        public void GivenEmptyMessage_ShouldThrowCustomNullException()
+        {
+            try
+            {//Arrange:- it will set up the testing object
+                MoodAnalyze moodAnalyse = new MoodAnalyze("");
+                //Act- It will perform the actual work what we want test
+                string result = moodAnalyse.AnalyzeMood();
+
+
+                
+            }
+            catch (MoodAnalyseCustom_Exception ex)
+            {
+                //Assert-Which verify 
+                Assert.AreEqual(ex.Message, "Message should not be empty");
+            }
+        }
 
     }
 }

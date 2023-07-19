@@ -20,6 +20,10 @@ namespace MoodAnalyzerDemo
         {
             try
             {
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new MoodAnalyseCustom_Exception("Message should not be empty", MoodAnalyser_ExceptionType.EMPTY_MOOD);
+                }
                 //My name is sad
                 if (message.Contains("Sad"))
                 {
@@ -33,7 +37,7 @@ namespace MoodAnalyzerDemo
             catch(NullReferenceException)
             {
                // return "Happy";
-               throw new MoodAnalyseCustom_Exception("Message should not be null", MoodAnalyser_ExceptionType.NULL_MOOD); //MoodAnalyser_ExceptionType.NULL_MOOD-Enum call.
+               throw new MoodAnalyseCustom_Exception("Message should not be null", MoodAnalyser_ExceptionType.EMPTY_MOOD); //MoodAnalyser_ExceptionType.NULL_MOOD-Enum call.
             }
 
         }
