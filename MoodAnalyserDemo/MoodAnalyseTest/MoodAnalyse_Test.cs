@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzeTest
 {
-   
+
     public class MoodAnalyze_Test
     {
-        
+
         [Test]
         public void GivenSadMood_ShouldReturnSad()
         {
@@ -40,15 +40,17 @@ namespace MoodAnalyzeTest
         public void GivenNullMessage_ShouldThrowCustomNullException()
         {
             try
-            {
+            {//Arrange:- it will set up the testing object
                 MoodAnalyze moodAnalyse = new MoodAnalyze(null);
+                //Act- It will perform the actual work what we want test
                 string result = moodAnalyse.AnalyzeMood();
 
 
 
             }
-            catch (MoodAnalyseCustom_Exception ex) 
+            catch (MoodAnalyseCustom_Exception ex)
             {
+                //Assert-Which verify 
                 Assert.AreEqual(ex.Message, "Message should not be null");
             }
         }
@@ -56,3 +58,4 @@ namespace MoodAnalyzeTest
     }
 }
 
+    
