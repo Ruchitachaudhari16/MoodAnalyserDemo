@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MoodAnalyserDemo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MoodAnalyserDemo.MoodAnalyseCustom_Exception;
 
 namespace MoodAnalyzerDemo
 {
@@ -30,7 +32,8 @@ namespace MoodAnalyzerDemo
             }
             catch(NullReferenceException)
             {
-                return "Happy";
+               // return "Happy";
+               throw new MoodAnalyseCustom_Exception("Message should not be null", MoodAnalyser_ExceptionType.NULL_MOOD); //MoodAnalyser_ExceptionType.NULL_MOOD-Enum call.
             }
 
         }

@@ -1,4 +1,5 @@
-﻿using MoodAnalyzerDemo;
+﻿using MoodAnalyserDemo;
+using MoodAnalyzerDemo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,22 @@ namespace MoodAnalyzeTest
             Assert.AreEqual(result, "Happy");
 
         }
+        [Test]
+        public void GivenNullMessage_ShouldThrowCustomNullException()
+        {
+            try
+            {
+                MoodAnalyze moodAnalyse = new MoodAnalyze(null);
+                string result = moodAnalyse.AnalyzeMood();
 
+
+
+            }
+            catch (MoodAnalyseCustom_Exception ex) 
+            {
+                Assert.AreEqual(ex.Message, "Message should not be null");
+            }
+        }
 
     }
 }
